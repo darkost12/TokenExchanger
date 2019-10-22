@@ -20,9 +20,11 @@ contract Exchanger is Ownable, Pausable {
 
     /// @dev Array of struct elements representing transactions.
     Transfer[] public transactions;
-
+    /// @dev Allows to store all transactions of particular user.
     mapping(address => uint[]) public transactionIndexesToSender;
+    /// @dev Stores the information of tokens existing in this exchanger.
     mapping(string => address) public tokens;
+    /// @dev Address of deployer of this contract
     address public exchangerOwner;
 
     /// @dev Current amount of transactions.
@@ -82,9 +84,9 @@ contract Exchanger is Ownable, Pausable {
         address contractGive = tokens[symbolGive];
         require(contractTake != address(0));
         require(contractGive != address(0));
+        require(amount_ > 0);
         ERC20 interfaceTake = ERC20(contractTake);
         ERC20 interfaceGive = ERC20(contractGive);
-        require(amount_ > 0);
         address from_ = msg.sender;
 
         /// @dev Checks that requirements on both sides are met.
