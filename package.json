@@ -1,0 +1,42 @@
+{
+  "name": "TokenExchanger",
+  "version": "1.0.0",
+  "description": "Custom tokens exchanger",
+  "license": "MIT",
+  "scripts": {
+    "build": "scripts/build.sh",
+    "test": "npm run compile && scripts/test.sh",
+    "coverage": "scripts/coverage.sh",
+    "compile": "truffle compile",
+    "console": "truffle console",
+    "lint": "npm run lint:js && npm run lint:sol",
+    "lint:js": "eslint test/*",
+    "lint:js:fix": "eslint test/* --fix",
+    "lint:sol": "solhint contracts/*.sol"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^2.3.0",
+    "@openzeppelin/test-helpers": "^0.5.3",
+    "bignumber": "^1.1.0",
+    "bn.js": "^5.0.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "ganache": "^6.4.4",
+    "openzeppelin-solidity": "^2.3.0",
+    "solhint": "^2.3.0",
+    "solidity": "^0.0.1",
+    "solidity-coverage": "^0.6.7",
+    "truffle": "^5.0.40",
+    "truffle-artifactor": "^4.0.30",
+    "truffle-flattener": "^1.4.2",
+    "web3": "^1.2.1"
+  },
+  "devDependencies": {
+    "ganache-cli": "^6.7.0"
+  }
+}
